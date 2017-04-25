@@ -1,0 +1,13 @@
+{
+  "name": "webpack-base",
+  "license": "MIT",
+  "require": {
+    "illuminate/support": "^5.3"
+  },
+  "authors": [
+    {
+      "name": "Tijs van Erp",
+      "email": "t.vanerp@theconceptstore.nl"
+    }
+  ]
+}

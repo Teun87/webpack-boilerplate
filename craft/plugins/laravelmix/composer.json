@@ -1,0 +1,14 @@
+{
+	"name": "tvanerp/laravelmix",
+	"description": "Adds support for Laravel Mix",
+	"type": "craft-plugin",
+	"authors": [
+		{
+			"name": "Tijs van Erp",
+			"homepage": "http://theconceptstore.nl"
+		}
+	],
+	"require": {
+		"composer/installers": "~1.0"
+	}
+}

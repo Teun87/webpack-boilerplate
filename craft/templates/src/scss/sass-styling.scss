@@ -1,0 +1,38 @@
+$test: green;
+
+@import "~some-package/test";
+
+// testen
+* {
+  color: $test !important;
+  background: url('./images/stub.png');
+}
+
+body {
+  font-family: 'robotothin_italic' sans-serif, serif;
+}
+
+@font-face {
+  font-family: 'robotothin_italic';
+  src: url('./fonts/Roboto-ThinItalic-webfont.eot');
+  src:
+    url('./fonts/Roboto-ThinItalic-webfont.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/Roboto-ThinItalic-webfont.woff') format('woff'),
+    url('./fonts/Roboto-ThinItalic-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.testThree {
+  color: orangered;
+}
+
+.testFour {
+  color: grey;
+}
+
+.test {
+  h1 {
+    color: deeppink;
+  }
+}

@@ -1,0 +1,37 @@
+$blue: red;
+
+.container {
+  display: grid;
+}
+
+.row {
+  grid-template-columns: 10;
+}
+
+.test {
+  display: flex;
+  color: $blued;
+
+  .sub {
+    color: orange;
+  }
+}
+
+.test2 {
+  color: red;
+}
+
+.example {
+  color: orange;
+}
+
+body {
+  background: orange;
+  color: $blue;
+}
+
+@custom-selector :--heading h1, h2, h3, h4, h5, h6;
+
+article :--heading + p {
+  margin-top: 0;
+}
