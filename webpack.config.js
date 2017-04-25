@@ -56,13 +56,13 @@ module.exports = {
                             }
                         },
                         'postcss-loader',
-                        // This loader will automatically fix whatever it can in your stylesheets before pre-processing them
-                        {
-                            loader: "stylefmt-loader",
-                            options: {
-                                config: "stylelint.config.js"
-                            }
-                        }
+                        //This loader will automatically fix whatever it can in your stylesheets before pre-processing them
+                        // {
+                        //     loader: "stylefmt-loader",
+                        //     options: {
+                        //         config: "stylelint.config.js"
+                        //     }
+                        // },
                     ],
                 })
             },
@@ -148,7 +148,7 @@ module.exports = {
         new StyleLintPlugin({
             files: 'craft/templates/**/*.?(s)?(a|c)ss',
             emitErrors: false,
-            quiet: true
+            // not working: quiet: true
         }),
 
         // Optional Clean plugin

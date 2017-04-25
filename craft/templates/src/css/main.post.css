@@ -1,3 +1,13 @@
+@import "normalize.css";
+@import "./components/tabs.post.css";
+
+/* @lost gutter 60px;
+@lost flexbox flex;
+@lost cycle none;
+@lost clearing left;
+@lost rounder 100;
+@lost --beta-direction rtl; */
+
 $blue: red;
 
 .container {
@@ -10,7 +20,7 @@ $blue: red;
 
 .test {
   display: flex;
-  color: $blued;
+  color: $blue;
 
   .sub {
     color: orange;
@@ -22,7 +32,7 @@ $blue: red;
 }
 
 .example {
-  color: orange;
+  color: red;
 }
 
 body {
@@ -34,4 +44,13 @@ body {
 
 article :--heading + p {
   margin-top: 0;
+}
+
+.o-container {
+  lost-center: 2500px;
+  lost-utility: clearfix;
+}
+
+.o-column {
+  lost-column: 1/2;
 }

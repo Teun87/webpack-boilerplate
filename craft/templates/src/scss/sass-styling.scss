@@ -1,5 +1,7 @@
 $test: green;
 
+@import "~bulma/sass/utilities/_all";
+@import "~bulma/sass/grid/columns";
 @import "~some-package/test";
 
 // testen
