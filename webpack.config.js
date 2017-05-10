@@ -8,12 +8,18 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var extractSCSS = new ExtractTextPlugin('[name].[chunkhash].css');
 var extractCSS = new ExtractTextPlugin('[name].[chunkhash].css');
 
+var HTMLExtractor = new ExtractTextPlugin('[name].twig');
+
 // Lint CSS
 var StyleLintPlugin = require('stylelint-webpack-plugin');
 
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 var ManifestPlugin = require('webpack-manifest-plugin');
 var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+
+// Plugin for creating svg sprites
+////var SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
+var SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 
 // Flag to check the node environment
 var inProduction = (process.env.NODE_ENV === 'production');
@@ -31,7 +37,8 @@ module.exports = {
         ],
         // Sass
         extraSassTest: [__dirname + '/craft/templates/src/scss/sass-styling.scss'],
-        vendor: ['jquery', 'vue']
+        // todo: why is svgxuse being exported to /template-images
+        vendor: ['jquery', 'vue', 'svgxuse']
     },
     output: {
         path: path.resolve(__dirname + '/public/dist/'),
@@ -84,6 +91,12 @@ module.exports = {
                 })
             },
 
+            // TWIG
+            {
+                test: /\.twig$/,
+                loader: HTMLExtractor.extract({ use: 'html-loader' })
+            },
+
             // JS
             {
                 test: /\.js$/,
@@ -101,16 +114,31 @@ module.exports = {
             {
                 test: /\.eot|ttf|woff|woff2$/,
                 loader: 'file-loader',
-                options: {name: './fonts/[name].[hash].[ext]'}
+                options: {name: './fonts/[name].[ext]'}
+            },
+
+            // SVG
+            // Best option for now is to manually create the sprite via icomoon.io and place it in the
+            // icons-folder.
+            {
+                test: /\.svg$/,
+                loader: 'svg-sprite-loader',
+                include: path.resolve(__dirname + '/craft/templates/src/icons'),
+                options: {
+                    extract: true,
+                    spriteModule: '/craft/templates/src/icons'
+                }
             },
 
             // IMAGES
             {
-                test: /\.png|jpg|svg|gif$/,
+                test: /\.png|jpg|gif$/,
                 loaders: [
                     {
                         loader: 'file-loader',
-                        options: {name: './template-images/[name].[hash].[ext]'}
+                        options: {
+                            name: './template-images/[name].[ext]'
+                        }
                     },
                     // Optimize images with RELATIVE path which are used in the CSS files (only if in production env)
                     {
@@ -124,6 +152,11 @@ module.exports = {
         ]
     },
     plugins: [
+
+        HTMLExtractor,
+
+        new SpriteLoaderPlugin(),
+
         new BrowserSyncPlugin({
             // browse to http://localhost:3000/ during development,
             // ./public directory is being served
@@ -200,7 +233,7 @@ module.exports = {
 };
 
 // If production minify JS
-if(inProduction) {
+if(inProduction){
     module.exports.plugins.push(
         new webpack.optimize.UglifyJsPlugin({
             compress: {

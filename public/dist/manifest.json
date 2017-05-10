@@ -1,12 +1,12 @@
 {
-  "app.css": "app.f6e18a118a6d70302ecc.css",
-  "app.js": "app.f6e18a118a6d70302ecc.js",
-  "extraSassTest.css": "extraSassTest.224c38fbd9d2a6b2740e.css",
-  "extraSassTest.js": "extraSassTest.224c38fbd9d2a6b2740e.js",
-  "fonts/Roboto-ThinItalic-webfont.eot": "./fonts/Roboto-ThinItalic-webfont.8b97626f67883267cff2c72251595383.eot",
-  "fonts/Roboto-ThinItalic-webfont.ttf": "./fonts/Roboto-ThinItalic-webfont.bee582389313116ff6c6f66905737dbe.ttf",
-  "fonts/Roboto-ThinItalic-webfont.woff": "./fonts/Roboto-ThinItalic-webfont.44dbed5ab10a03fdef0a825f6265983e.woff",
-  "template-images/foo.png": "./template-images/foo.f24670dc0affbc6f1b2d2f9089d1b086.png",
-  "template-images/stub.png": "./template-images/stub.f24670dc0affbc6f1b2d2f9089d1b086.png",
-  "vendor.js": "vendor.903abe0faf377a7f41ea.js"
+  "app.css": "app.02e51a0b26ae9521f678.css",
+  "app.js": "app.02e51a0b26ae9521f678.js",
+  "extraSassTest.css": "extraSassTest.313f321cbe711e036519.css",
+  "extraSassTest.js": "extraSassTest.313f321cbe711e036519.js",
+  "fonts/Roboto-ThinItalic-webfont.eot": "./fonts/Roboto-ThinItalic-webfont.eot",
+  "fonts/Roboto-ThinItalic-webfont.ttf": "./fonts/Roboto-ThinItalic-webfont.ttf",
+  "fonts/Roboto-ThinItalic-webfont.woff": "./fonts/Roboto-ThinItalic-webfont.woff",
+  "sprite.svg.svg": "sprite.svg",
+  "template-images/foo.png": "./template-images/foo.png",
+  "vendor.js": "vendor.67436c137c543a22e986.js"
 }
